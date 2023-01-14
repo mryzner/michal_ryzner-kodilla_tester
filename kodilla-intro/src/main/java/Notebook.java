@@ -1,7 +1,7 @@
 public class Notebook {
-    int weight;
-    int price;
-    int yearOfManufacture;
+    private int weight;
+    private int price;
+    private int yearOfManufacture;
     public Notebook(int weight, int price, int yearOfManufacture) {
         this.weight = weight;
         this.price = price;
