@@ -1,7 +1,16 @@
 public class Notebook {
     private int weight;
+    public int getWeight() {
+        return weight;
+    }
     private int price;
+    public int getPrice() {
+        return price;
+    }
     private int yearOfManufacture;
+    public int getYearOfManufacture() {
+        return yearOfManufacture;
+    }
     public Notebook(int weight, int price, int yearOfManufacture) {
         this.weight = weight;
         this.price = price;
@@ -35,8 +44,11 @@ public class Notebook {
         if (this.price <= 500 && this.yearOfManufacture <= 2010) {
             System.out.println("This is a budget notebook.");
         }
-        else {
+        else if (this.price > 500 && this.yearOfManufacture < 2020) {
             System.out.println("This is the best notebook money can buy.");
+        }
+        else {
+            System.out.println("This is a high-end notebook");
         }
     }
 }
