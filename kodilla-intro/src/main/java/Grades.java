@@ -12,7 +12,7 @@ public class Grades {
         this.grades[this.size] = value;
         this.size++;
     }
-    public void meanGrades () {
+    public void printLastGrade () {
 
     }
 

@@ -1,9 +1,11 @@
 import java.util.Random;
 public class MyTest6 {
     public static void main(String[] args) {
+        int example = getCountOfRandomNumber(10);
+        System.out.println(example);
 
     }
-    public int getCountOfRandomNumber(int max) {
+    public static int getCountOfRandomNumber(int max) {
         Random random = new Random();
         int result = 0;
         int sum = 0;
