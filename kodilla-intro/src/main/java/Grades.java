@@ -12,8 +12,16 @@ public class Grades {
         this.grades[this.size] = value;
         this.size++;
     }
-    public void printLastGrade () {
-
+    public int getLastGrade () {
+        int lastGrade = grades[size - 1];
+        return lastGrade;
+    }
+    public double getAvgGrade() {
+        double sum = 0;
+        for (int x=0; x<=size; x++) {
+            sum = sum + grades[x];
+        }
+        return sum/size;
     }
 
 

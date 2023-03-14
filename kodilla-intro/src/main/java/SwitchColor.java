@@ -1,37 +1,29 @@
 import java.util.Scanner;
 public class SwitchColor {
     public static void main(String[] args) {
-        System.out.println("Podaj pierwszą literę koloru, użyj małych liter");
-        printColorName();
-
+        System.out.println("Podaj pierwszą literę koloru");
+        String colorName = getColorName();
+        System.out.println(colorName);
     }
-    public static void printColorName() {
+    private static String getColorName() {
         Scanner scanner = new Scanner(System.in);
-        String colour = scanner.nextLine();
-        switch (colour) {
-            case "b":
-                System.out.println("biały lub brązowy");
+        String color = scanner.nextLine().toUpperCase();
+        switch (color) {
+            case "B":
+                color = "biały";
                 break;
-            case "c":
-                System.out.println("czarny lub czerwony");
+            case "C":
+                color = "czarny";
                 break;
-            case "f":
-                System.out.println("fioletowy");
+            case "N":
+                color = "niebieski";
                 break;
-            case "n":
-                System.out.println("niebieski");
-                break;
-            case "r":
-                System.out.println("różowy lub rudy");
-                break;
-            case "s":
-                System.out.println("szary");
-                break;
-            case "z":
-                System.out.println("zielony");
+            case "Z":
+                color = "zielony";
                 break;
             default:
-                System.out.println("Error!");
+                color = "brak innych kolorów";
         }
+        return color;
     }
 }

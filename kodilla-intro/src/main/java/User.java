@@ -18,8 +18,19 @@ public class User {
 
         User[] users = {anna,betty,carl,david,eva,frankie};
 
-        int result = 0;
+        double result = 0;
         for (int i=0; i<users.length; i++) {
+            result = result + users[i].getAge();
+        }
+        double avgAge = result/users.length;
+        System.out.println("Average age is: " + avgAge);
+        System.out.println("Users below average age:");
+
+        for (int i=0; i<users.length; i++) {
+            if (users[i].getAge() < avgAge) {
+                System.out.println(users[i].getName());
+            }
+
 
         }
     }

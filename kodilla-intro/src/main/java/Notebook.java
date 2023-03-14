@@ -1,22 +1,15 @@
 public class Notebook {
     private int weight;
-    public int getWeight() {
-        return weight;
-    }
     private int price;
-    public int getPrice() {
-        return price;
-    }
     private int yearOfManufacture;
-    public int getYearOfManufacture() {
-        return yearOfManufacture;
-    }
     public Notebook(int weight, int price, int yearOfManufacture) {
         this.weight = weight;
         this.price = price;
         this.yearOfManufacture = yearOfManufacture;
-
     }
+    public int getWeight() { return weight; }
+    public int getPrice() { return price; }
+    public int getYearOfManufacture() { return yearOfManufacture; }
 
     public void checkPrice() {
         if (this.price < 600) {

@@ -1,4 +1,4 @@
-public class FirstClass {
+public class NotebookApplication {
     public static void main(String[] args) {
         Notebook notebook = new Notebook(600, 1000, 2015);
         System.out.println("weight: " + notebook.getWeight() + " " + "price: " + notebook.getPrice() + " year: " + notebook.getYearOfManufacture());
