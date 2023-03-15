@@ -1,7 +1,7 @@
 import java.util.Random;
 public class RandomNumbers {
-    private static int maxNumber;
-    private static int minNumber;
+    private static int maxNumber = 0;
+    private static int minNumber = 31;
 
     public static void main(String[] args) {
         doRandom(5000);
@@ -13,8 +13,6 @@ public class RandomNumbers {
     public static void doRandom(int max) {
         Random random = new Random();
         int sum = 0;
-        int maxNumber = 0;
-        int minNumber = 31;
         while (sum < max) {
             int temp = random.nextInt(31);
             sum = sum + temp;
