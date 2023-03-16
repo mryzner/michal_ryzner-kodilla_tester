@@ -4,7 +4,9 @@ plugins {
 
 group 'com.kodilla'
 version '1.0-SNAPSHOT'
-
+test {
+    useJUnitPlatform()
+}
 repositories {
     mavenCentral()
 }
