@@ -3,6 +3,7 @@ package com.kodilla.basic_assertion;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class CalculatorTestSuite {
     @Test
@@ -12,6 +13,7 @@ public class CalculatorTestSuite {
         double b = 5.4;
         double sumResult = calculator.sum(a, b);
         assertEquals(13.9, sumResult, 0.01);
+        assertNotEquals(20, sumResult, 0.001);
     } // assertEquals(16, calculator.sum(4, 12), 0.01);
     @Test
     public void testPower() {
