@@ -37,4 +37,23 @@ public class Student {
             this.history.add(grade);
         }
     }
+    public double getMathsAverage() {
+        return this.maths.getAverage();
+    }
+
+    public double getPhysicsAverage() {
+        return this.physics.getAverage();
+    }
+
+    public double getGeographyAverage() {
+        return this.geography.getAverage();
+    }
+
+    public double getHistoryAverage() {
+        return this.history.getAverage();
+    }
+    public double getAverage() {
+        double sum = this.geography.getAverage() + this.history.getAverage() + this.maths.getAverage() + this.physics.getAverage();
+        return sum/4;
+    }
 }

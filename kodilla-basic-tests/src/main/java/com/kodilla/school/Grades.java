@@ -20,4 +20,20 @@ public class Grades {
     public int[] getValues() {
         return values;
     }
+    public double getAverage() {
+        //double sum = 0;
+        //for (int i = 0; i < this.values.length; i++) {
+          //  sum += this.values[i];
+        //}
+        //return sum/this.values.length;
+
+        if (this.values.length == 0) {
+            return 0;
+        }
+        double sum = 0;
+        for(int i = 0; i < this.values.length; i++) {
+            sum = sum + this.values[i];
+        }
+        return sum/this.values.length;
+    }
 }
