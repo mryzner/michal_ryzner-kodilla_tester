@@ -62,9 +62,9 @@ public class CashMachine {
         return sum;
     }
     public double getAverageDepositValue() {
-        //if (transactions.length == 0) {
-          //  return 0;
-        //}
+        if (transactions.length == 0) {
+            return 0;
+        }
         double sum = 0;
         int count = 0;
         for (int value: transactions) {

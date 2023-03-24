@@ -5,52 +5,54 @@ import com.kodilla.school.Grades;
 import java.sql.SQLOutput;
 
 public class Bank {
-    private CashMachine cashMachine1;
-    private CashMachine cashMachine2;
-    private CashMachine cashMachine3;
-
+    CashMachine[] cashMachines = new CashMachine[0];
+    private int size;
     public Bank() {
-        this.cashMachine1 = new CashMachine();
-        this.cashMachine2 = new CashMachine();
-        this.cashMachine3 = new CashMachine();
-        CashMachine[] cashMachines = new CashMachine[] {cashMachine1, cashMachine2, cashMachine3};
+    }
+    public void addCashMachine(CashMachine cashMachine) {
+        this.size++;
+        CashMachine[] newTab = new CashMachine[this.size];
+        System.arraycopy(cashMachines, 0, newTab, 0, cashMachines.length);
+        newTab[this.size - 1] = cashMachine;
+        this.cashMachines = newTab;
     }
     public int getTotalBalance() {
-        int sum = cashMachine1.getBalance() + cashMachine2.getBalance() + cashMachine3.getBalance();
+        int sum = 0;
+        for (int i = 0; i < cashMachines.length; i++) {
+            sum = sum + cashMachines[i].getBalance();
+        }
         return sum;
     }
     public int getDepositsNumber() {
-        int sum = cashMachine1.getNumberOfDepositTransactions() + cashMachine2.getNumberOfDepositTransactions() + cashMachine3.getNumberOfDepositTransactions();
+        int sum = 0;
+        for (int i=0; i<cashMachines.length; i++) {
+            sum = sum+cashMachines[i].getNumberOfDepositTransactions();
+        }
         return sum;
     }
     public int getWithdrawalsNumber() {
-        int sum = cashMachine1.getNumberOfWithdrawalTransactions() + cashMachine2.getNumberOfWithdrawalTransactions() + cashMachine3.getNumberOfWithdrawalTransactions();
+        int sum = 0;
+        for (int i=0; i<cashMachines.length; i++) {
+            sum = sum+cashMachines[i].getNumberOfWithdrawalTransactions();
+        }
         return sum;
     }
-    public double getAverageAllDepositsValue() {
-        double sum1 = cashMachine1.getAverageDepositValue() + cashMachine2.getAverageDepositValue() + cashMachine3.getAverageDepositValue();
-        double sum2 = cashMachine1.getNumberOfDepositTransactions() + cashMachine2.getNumberOfDepositTransactions() + cashMachine3.getNumberOfDepositTransactions();
-        return sum1/sum2;
+    public double getAverageDepositsValue() {
+        double sum = 0;
+        int depositQuantity = 0;
+        for (int i=0; i<cashMachines.length; i++) {
+            sum = sum + cashMachines[i].getSumOfCashDeposits();
+            depositQuantity = depositQuantity + cashMachines[i].getNumberOfDepositTransactions();
+        }
+        return sum/depositQuantity;
     }
     public double getAverageAllWithdrawalsValue() {
-        double sum1 = cashMachine1.getAverageWithdrawalValue() + cashMachine2.getAverageWithdrawalValue() + cashMachine3.getAverageWithdrawalValue();
-        double sum2 = cashMachine1.getNumberOfWithdrawalTransactions() + cashMachine2.getNumberOfWithdrawalTransactions() + cashMachine3.getNumberOfWithdrawalTransactions();
-        return sum1/sum2;
-    }
-    public CashMachine getCashMachine1() { return this.cashMachine1; }
-    public CashMachine getCashMachine2() { return this.cashMachine2; }
-    public CashMachine getCashMachine3() { return this.cashMachine3; }
-
-    public static void main(String[] args) {
-        Bank bank = new Bank();
-        bank.getCashMachine1().addTransaction(-100);
-        bank.getCashMachine2().addTransaction(100);
-        bank.getCashMachine3().addTransaction(-100);
-        bank.getCashMachine1().addTransaction(100);
-        bank.getCashMachine2().addTransaction(50);
-        bank.getCashMachine3().addTransaction(0);
-        double result = bank.getAverageAllDepositsValue();
-        System.out.println(result);
-
+        double sum = 0;
+        double withdrawalQuantity = 0;
+        for (int i=0; i<cashMachines.length; i++) {
+            sum = sum + cashMachines[i].getSumOfCashWithdrawals();
+            withdrawalQuantity = withdrawalQuantity + cashMachines[i].getNumberOfWithdrawalTransactions();
+        }
+        return sum/withdrawalQuantity;
     }
 }
