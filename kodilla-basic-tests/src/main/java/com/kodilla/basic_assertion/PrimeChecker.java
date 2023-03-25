@@ -1,8 +1,10 @@
 package com.kodilla.basic_assertion;
 
+import java.sql.SQLOutput;
+
 public class PrimeChecker {
-    private int count;
-    public boolean isPrime(int number) {
+    private int count; // w celu wyświetlenia numeru testu w PrimeCheckerTestSuite
+    public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }
@@ -20,5 +22,10 @@ public class PrimeChecker {
 
     public void incrementCount() {
         this.count++;
+    }
+
+    public static void main(String[] args) {
+        boolean result = isPrime(568987);
+        System.out.println("Czy liczba jest liczbą pierwszą: " + result);
     }
 }

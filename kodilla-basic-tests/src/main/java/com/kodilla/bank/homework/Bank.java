@@ -5,10 +5,9 @@ import com.kodilla.school.Grades;
 import java.sql.SQLOutput;
 
 public class Bank {
-    CashMachine[] cashMachines = new CashMachine[0];
+    private CashMachine[] cashMachines = new CashMachine[0];
     private int size;
-    public Bank() {
-    }
+
     public void addCashMachine(CashMachine cashMachine) {
         this.size++;
         CashMachine[] newTab = new CashMachine[this.size];
