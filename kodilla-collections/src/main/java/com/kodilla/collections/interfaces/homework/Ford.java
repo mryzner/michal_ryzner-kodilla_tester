@@ -4,7 +4,7 @@ public class Ford implements Car {
     private int speed;
     public Ford(int speed) {
         this.speed = speed;
-        System.out.println("Ford");
+        //System.out.println("Ford");
     }
     @Override
     public int getSpeed() {
