@@ -1,8 +1,6 @@
 package com.kodilla.collections.arrays.homework;
-import com.kodilla.collections.interfaces.homework.Car;
-import com.kodilla.collections.interfaces.homework.Ford;
-import com.kodilla.collections.interfaces.homework.Opel;
-import com.kodilla.collections.interfaces.homework.Seat;
+import com.kodilla.collections.interfaces.homework.*;
+
 public class CarUtils {
     public static void describeCar(Car car) {
         System.out.println("----------------------------");
@@ -17,6 +15,6 @@ public class CarUtils {
         else if (car instanceof Seat)
             return "Seat";
         else
-            return "Unknown car name";
+            return "Trabant";
     }
 }
