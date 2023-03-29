@@ -17,6 +17,9 @@ public class StampsApplication {
         int count = 0;
         for (Stamp stamp: stamps) {
             count++;
+                                             /*if (stamps.size() != 5) {
+                                             throw new Exception();
+                                             }*/
             System.out.println(count);
             System.out.println(stamp);
         }
