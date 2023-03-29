@@ -14,7 +14,10 @@ public class StampsApplication {
         stamps.add(new Stamp("Valuable stamp", 5, 4, true));
 
         System.out.println("Size: " + stamps.size());
+        int count = 0;
         for (Stamp stamp: stamps) {
+            count++;
+            System.out.println(count);
             System.out.println(stamp);
         }
     }
