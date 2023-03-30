@@ -1,5 +1,3 @@
-package com.kodilla.collections.sets.homework;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +16,9 @@ public class StampsApplication {
         } else {
             System.out.println("An error occurred !");
         }
+//      if (stamps.size() != 5) {
+//          throw new RuntimeException("Something is wrong with adding stamps to set");
+//      }
         System.out.println("Displaying collection info:");
         System.out.println("Collection size: " + stamps.size());
         int count = 0;
