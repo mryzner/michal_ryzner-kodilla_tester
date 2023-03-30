@@ -9,22 +9,24 @@ import java.util.Map;
 
 public class SchoolDirectory {
     public static void main(String[] args) {
-        Map<Principal, School> schools = new HashMap<>();
-        Principal john = new Principal("John", "Wayne");
-        Principal sylvester = new Principal("Sylvester", "Stallone");
-        Principal clint = new Principal("Clint", "Eastwood");
+        Map<Principal, School> principalsToSchools = new HashMap<>();
+        Principal principal1 = new Principal("John", "Wayne");
+        Principal principal2 = new Principal("Sylvester", "Stallone");
+        Principal principal3 = new Principal("Clint", "Eastwood");
 
         School school1 = new School("Big school", Arrays.asList(25, 19, 30, 29, 20));
         School school2 = new School("Modern school", Arrays.asList(16,17,18,19));
         School school3 = new School("Old school", Arrays.asList(22,24,26));
 
-        schools.put(john, school1);
-        schools.put(sylvester, school2);
-        schools.put(clint, school3);
+        principalsToSchools.put(principal1, school1);
+        principalsToSchools.put(principal2, school2);
+        principalsToSchools.put(principal3, school3);
 
-        for (Map.Entry<Principal, School> example: schools.entrySet()) {
-            System.out.println("Principal: " + example.getKey().getFirstname() + " " + example.getKey().getLastname() + "  "
-                    + "School: " + example.getValue().getName() + "  Number of all pupils: " + example.getValue().getSumOfAllClasses());
+        for (Map.Entry<Principal, School> principalSchoolEntry: principalsToSchools.entrySet()) {
+            System.out.println("Principal: " + principalSchoolEntry.getKey().getFirstname()
+                    + " " + principalSchoolEntry.getKey().getLastname() + "   " + "School: "
+                    + principalSchoolEntry.getValue().getName() + "   Number of all pupils: "
+                    + principalSchoolEntry.getValue().getSumOfAllClasses());
         }
     }
 }

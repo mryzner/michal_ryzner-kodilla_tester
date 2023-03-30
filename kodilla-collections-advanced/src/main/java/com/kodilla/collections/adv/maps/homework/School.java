@@ -22,8 +22,4 @@ public class School {
     public String getName() {
         return name;
     }
-
-    /*public List<Integer> getClassesSize() {
-        return classesSize;
-    }*/
 }
