@@ -33,6 +33,7 @@ class DictionaryTestSuite {
         List<EnglishWord> expectedList = new ArrayList<>();
         expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "play"));
         expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "game"));
+        //expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "play"));
         assertEquals(expectedList, result);
     }
     @Test
