@@ -3,7 +3,7 @@ package com.kodilla.collections.adv.exercises.homework;
 import java.util.*;
 
 public class FlightFinder {
-    public static List<Flight> flightList = FlightRepository.getFlightsTable();
+    private final List<Flight> flightList;
 
     public FlightFinder(List<Flight> flightList) {
         this.flightList = flightList;
