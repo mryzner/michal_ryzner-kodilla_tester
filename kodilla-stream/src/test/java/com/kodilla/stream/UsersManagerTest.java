@@ -18,9 +18,16 @@ class UsersManagerTest {
     @Test
     public void testFilterChemistGroupUsernames() {
         List<String> result = UsersManager.filterChemistGroupUsernames();
-        //List<String> expectedUsers = new ArrayList<>();
         expectedUsers.add(new String("Walter White"));
         expectedUsers.add(new String("Gale Boetticher"));
+        assertEquals(expectedUsers, result);
+    }
+    @Test
+    public void testFilterAgeCriterionUsernames() {
+        List<String> result = UsersManager.filterAgeCriterionUsernames(45);
+        expectedUsers.add(new String("Walter White"));
+        expectedUsers.add(new String("Gus Firing"));
+        expectedUsers.add(new String("Mike Ehrmantraut"));
         assertEquals(expectedUsers, result);
     }
 }
