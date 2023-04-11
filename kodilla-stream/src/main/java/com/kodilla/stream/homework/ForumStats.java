@@ -10,13 +10,13 @@ import static java.util.Arrays.stream;
 
 public class ForumStats {
     public static void main(String[] args) {
-        double UserOver40 = AverageNumberOfPostsUsersAgeOver40();
-        double UserBelow40 = AverageNumberOfPostsUsersAgeBelow40();
+        double UserOver40 = averageNumberOfPostsUsersAgeOver40();
+        double UserBelow40 = averageNumberOfPostsUsersAgeBelow40();
         System.out.println(UserOver40);
         System.out.println(UserBelow40);
 
     }
-    public static double AverageNumberOfPostsUsersAgeOver40() {
+    public static double averageNumberOfPostsUsersAgeOver40() {
         return UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() >= 40)
@@ -24,7 +24,7 @@ public class ForumStats {
                 .average()
                 .getAsDouble();
     }
-    public static double AverageNumberOfPostsUsersAgeBelow40() {
+    public static double averageNumberOfPostsUsersAgeBelow40() {
         return UsersRepository.getUsersList()
                 .stream()
                 .filter(user -> user.getAge() < 40)
