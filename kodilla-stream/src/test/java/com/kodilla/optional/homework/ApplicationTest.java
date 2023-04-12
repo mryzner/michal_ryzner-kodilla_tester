@@ -16,5 +16,6 @@ class ApplicationTest {
         Student student = new Student("John Smith", new Teacher("Hans Schmidt"));
         String result = Application.getTeacherName(student);
         assertEquals("Hans Schmidt", result);
+        assertNotEquals("B", result);
     }
 }

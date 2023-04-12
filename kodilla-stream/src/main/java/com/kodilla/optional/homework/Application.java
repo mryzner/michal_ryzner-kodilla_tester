@@ -6,10 +6,6 @@ import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
-
-        getStudentsList();
-    }
-    public static List<Student> getStudentsList() {
         List<Student> students = new ArrayList<>();
         students.add(new Student("John Smith", new Teacher("Hans Schmidt")));
         students.add(new Student("Roger Newman", new Teacher("Rüdiger Neumann")));
@@ -20,9 +16,8 @@ public class Application {
 
         for(Student student: students) {
             System.out.println("student: " + student.getName() + ", teacher: " + getTeacherName(student) );
+            System.out.println("A");
         }
-
-        return students;
     }
     public static String getTeacherName(Student student) {
         Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
