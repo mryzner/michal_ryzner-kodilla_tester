@@ -7,13 +7,13 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("2"));
         warehouse.addOrder(new Order("3"));
 
-        /*try {
-            warehouse.getOrder("3");
+        try {
+            warehouse.getOrder("4");
 
         } catch (OrderDoesntExistException e) {
             System.out.println("We're sorry, no such order");
         } finally {
             System.out.println("Thank you for using Warehouse services");
-        }*/
+        }
     }
 }
