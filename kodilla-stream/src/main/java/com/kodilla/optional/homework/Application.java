@@ -16,7 +16,6 @@ public class Application {
 
         for(Student student: students) {
             System.out.println("student: " + student.getName() + ", teacher: " + getTeacherName(student) );
-            System.out.println("A");
         }
     }
     public static String getTeacherName(Student student) {
