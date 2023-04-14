@@ -9,6 +9,7 @@ public class StringValidator {
         System.out.println(res + " " + res2 + " " + res3 + " " + res4);
     }
     public static boolean isBlank(String text) {
+
         return text == null || text.trim().isEmpty();
     }
 }

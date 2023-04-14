@@ -15,7 +15,7 @@ public class StringManipulator {
     }
     public static int getStringLengthWithoutSpaces(String input) {
         String value = input.replaceAll(" ", "");
-        //System.out.println(value);
+        // System.out.println(value);
         return value.length();
     }
     public static int countNumberOfCommas(String text) {
