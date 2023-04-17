@@ -27,7 +27,6 @@ class UserValidatorTestSuite {
     @ParameterizedTest
     @NullSource
     public void shouldThrowExceptionWhenUsernameIsNull(String username) throws NullPointerException {
-        //assertThrows(AirportNotFoundException.class, () -> airportRepository.isAirportInUse("Vienna"))
         assertThrows(NullPointerException.class, () -> userValidator.validateUsername(username));
     }
 
