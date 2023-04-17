@@ -9,9 +9,8 @@ class PersonTestSuite {
 
     @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.PersonDataProvider#provideCorrectValuesForTestingBMI")
-    public void shouldProperlyCalculateBMIWhenCorrectValuesAreGiven(double heightInMeters, double weightInKilogram, String message) {
+    public void shouldProperlyCalculateBMIWhenCorrectValuesAreGiven(double heightInMeters, double weightInKilogram, String expectedResult) {
         Person person = new Person(heightInMeters, weightInKilogram);
-        String expectedResult = message;
         String actualResult = person.getBMI();
         System.out.println(actualResult);
         assertEquals(expectedResult, actualResult);
