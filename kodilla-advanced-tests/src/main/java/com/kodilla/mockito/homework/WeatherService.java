@@ -10,6 +10,7 @@ public class WeatherService {
     private Map<Location, Set<Client>> clientsToLocations = new HashMap<>();
 
     public void addClientToLocation(Location location, Client client) {
+
         clientsToLocations.get(location).add(client);
     }
     public void removeClientFromLocation(Location location, Client client) {
