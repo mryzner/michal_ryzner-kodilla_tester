@@ -23,8 +23,10 @@ public class WeatherService {
     public void sendNotificationToGivenLocation(Location location, Notification notification) {
         clientsToLocations.get(location).forEach(client -> client.receive(notification));
     }
-    public void sendNotificationToAllClients() {
-
+    public void sendNotificationToAllClients(Notification notification) {
+        for (Map.Entry<Location, Set<Client>> entry : clientsToLocations.entrySet()) {
+            entry.getValue().forEach(client -> client.receive(notification));
+        }
     }
     public void addLocation(Location location) {
         clientsToLocations.put(location, new HashSet<>());
