@@ -10,10 +10,10 @@ public class GamblingMachine2 {
         System.out.println("1: " + result);
         int result2 = howManyWins(result);
         System.out.println("2: " + result2);
-        //Set<Integer> res = new HashSet<>();
-        //res.add(0);
-        //res.add(50);
-        //howManyWins(res);
+        /*Set<Integer> result3 = new HashSet<>();
+        res.add(0);
+        res.add(50);
+        howManyWins(result3);*/
     }
     public static int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
         validateNumbers(userNumbers);
