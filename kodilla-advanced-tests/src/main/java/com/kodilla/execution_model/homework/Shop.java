@@ -29,8 +29,7 @@ public class Shop {
     public int getSumOfAllOrdersValues() {
         return orders
                 .stream()
-                .map(order -> order.getOrderPrice())
-                .mapToInt(i -> i)
+                .mapToInt(order -> order.getOrderPrice())
                 .sum();
     }
 }

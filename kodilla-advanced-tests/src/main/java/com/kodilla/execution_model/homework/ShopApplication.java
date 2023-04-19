@@ -16,5 +16,7 @@ public class ShopApplication {
         List<Order> result2 = shop.getOrdersSortedByLimitValue(60, 210);
         System.out.println("Result: " + result + " Result2: " + result2);
 
+        int result3 = shop.getSumOfAllOrdersValues();
+        System.out.println(result3);
     }
 }

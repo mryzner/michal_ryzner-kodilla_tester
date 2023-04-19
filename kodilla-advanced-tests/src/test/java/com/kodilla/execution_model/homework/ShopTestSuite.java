@@ -42,5 +42,6 @@ class ShopTestSuite {
     public void testGetSumOfAllOrdersValues() {
         int expectedOrders = shop.getSumOfAllOrdersValues();
         assertEquals(1140, expectedOrders);
+
     }
 }
