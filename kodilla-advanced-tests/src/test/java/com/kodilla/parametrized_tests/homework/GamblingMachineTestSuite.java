@@ -13,11 +13,18 @@ class GamblingMachineTestSuite {
     GamblingMachine gamblingMachine = new GamblingMachine();
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/GamblingMachineValues.csv", numLinesToSkip = 1, delimiter = ',')
-    public void shouldThrowException(String input) {
+    @CsvFileSource(resources = "/GamblingMachineIncorrectValues.csv", numLinesToSkip = 1, delimiter = ';')
+    public void shouldThrowExceptionWhenIncorrectValuesGiven(String input) {
         String [] arrayOfStrings = input.split(",");
         Set <Integer> numbers = Arrays.stream(arrayOfStrings).map(i -> Integer.valueOf(i)).collect(Collectors.toSet());
         assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
+    }
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/GamblingMachineCorrectValues.csv", numLinesToSkip = 1, delimiter = ';')
+    public void shouldNotThrowExceptionWhenCorrectValuesGiven(String input) {
+        String [] arrayOfStrings = input.split(",");
+        Set <Integer> numbers = Arrays.stream(arrayOfStrings).map(i -> Integer.valueOf(i)).collect(Collectors.toSet());
+        assertDoesNotThrow(() -> gamblingMachine.howManyWins(numbers));
     }
 }
