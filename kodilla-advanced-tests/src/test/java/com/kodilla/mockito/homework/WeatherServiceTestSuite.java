@@ -76,5 +76,10 @@ class WeatherServiceTestSuite {
         Set<Location> expectedResult = service.findLocation(warszawa);
         assertEquals(0, expectedResult.size());
     }
-
+    @Test
+    public void shouldRemoveLocationFromService_withException() {
+        service.addClientToLocation(warszawa, client1);
+        service.removeLocation(warszawa);
+        assertThrows(NullPointerException.class, () -> service.sendAlertToGivenLocation(warszawa, alert));
+    }
 }

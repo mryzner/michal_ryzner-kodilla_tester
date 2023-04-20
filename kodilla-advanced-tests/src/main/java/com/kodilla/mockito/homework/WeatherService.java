@@ -22,8 +22,13 @@ public class WeatherService {
             clients.remove(client);
         }
     }
-    public void sendAlertToGivenLocation(Location location, Alert alert) {
-        clientsToLocations.get(location).forEach(client -> client.receive(alert));
+    public void sendAlertToGivenLocation(Location location, Alert alert) throws NullPointerException{
+        if (clientsToLocations.containsKey(location)) {
+            clientsToLocations.get(location).forEach(client -> client.receive(alert));
+        }
+        else {
+            throw new NullPointerException();
+        }
     }
     public void sendNotificationToAllClients(Notification notification) {
         for (Map.Entry<Location, Set<Client>> entry : clientsToLocations.entrySet()) {
