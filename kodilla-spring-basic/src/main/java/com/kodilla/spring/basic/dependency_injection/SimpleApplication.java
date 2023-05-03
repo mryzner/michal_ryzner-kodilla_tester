@@ -4,6 +4,7 @@ public class SimpleApplication {
     private MessageService messageService;
 
     public SimpleApplication(MessageService messageService) {
+
         this.messageService = messageService;
     }
     public void processMessage(String message, String receiver) {
