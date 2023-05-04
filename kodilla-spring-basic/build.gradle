@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.4.5'
+        springBootVersion = '2.7.5'
     }
     repositories {
         mavenCentral()
@@ -33,6 +33,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-tasks.named("bootJar") {
-    mainClass = 'com.kodilla.spring.basic.SpringBasicRunner'
+
+bootJar {
+    mainClass.set("com.kodilla.spring.basic.SpringBasicRunner")
 }
+
