@@ -10,4 +10,5 @@ public class TruckDeliveryService implements DeliveryService {
         System.out.println("Delivery by truck in progress...");
         return true;
     }
+
 }
