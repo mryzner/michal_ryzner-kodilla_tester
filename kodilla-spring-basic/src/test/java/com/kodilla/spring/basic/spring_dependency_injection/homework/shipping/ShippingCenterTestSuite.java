@@ -1,5 +1,6 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework.shipping;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -14,7 +15,9 @@ class ShippingCenterTestSuite {
     NotificationService notificationService = context.getBean(NotificationEmailService.class);
 
     @Test
-    public void shouldFailIfPackageTooHeavy() {
-
+    public void shouldReturnNotification() {
+        String result = shippingCenter.sendPackage("Mój dom", 25);
+        Assertions.assertNotNull(result);
+        System.out.println("Result: " + result);
     }
 }
