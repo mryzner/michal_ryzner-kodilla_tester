@@ -3,8 +3,11 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.MonthDay;
+import java.time.Period;
+
 @Configuration
 public class CarSetup {
     MonthDay presentDate = MonthDay.now();
@@ -16,14 +19,18 @@ public class CarSetup {
     @Bean
     public Car selectCarType() {
         Car car;
-        if(presentDate.isAfter(winterStart) && presentDate.isBefore(springStart)) {
-            car = new SUV();
+
+        if((presentDate.isAfter(springStart)) && (presentDate.isBefore(summerStart))) {
+            car = new Sedan();
         }
-        else if(presentDate.isAfter(summerStart) && presentDate.isBefore(autumnStart)) {
+        else if((presentDate.isAfter(summerStart)) && (presentDate.isBefore(autumnStart))) {
             car = new Cabrio();
         }
-        else {
+        else if((presentDate.isAfter(autumnStart)) && (presentDate.isBefore(winterStart))) {
             car = new Sedan();
+        }
+        else {
+            car = new SUV();
         }
         return car;
     }

@@ -17,10 +17,11 @@ class CarSetupTestSuite {
     @Test
     public void shouldSelectCorrectCarTypeDependingOnSeason() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
-        LocalDate date = LocalDate.of(2010, 12, 22);
-        Car car = (Car) context.getBean("selectCarType");
+        //MonthDay monthDay = MonthDay.now();
+        Car car = (Car) context.getBean("selectCarType", MonthDay.of(4, 27));
         String carType = car.getCarType();
-        assertEquals("Sedan", carType);
+        //assertEquals("Cabrio", carType);
+        assertTrue(car instanceof Sedan);
     }
 
     @Test
