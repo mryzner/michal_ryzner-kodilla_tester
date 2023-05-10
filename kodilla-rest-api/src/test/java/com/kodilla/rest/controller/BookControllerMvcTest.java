@@ -39,4 +39,13 @@ public class BookControllerMvcTest {
                 .andExpect(MockMvcResultMatchers.status().is(200))
                 .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(2)));
     }
+   /*@Test
+    void shouldAddBooks() throws Exception {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(new BookDto("title 1", "author 1"));
+        mockMvc.perform(MockMvcRequestBuilders.post("/books")
+                .contentType(MediaType.APPLICATION_JSON).content(jsonString))
+                .andExpect(MockMvcResultMatchers.status().is(200))
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(1)));
+    }*/
 }
