@@ -39,7 +39,7 @@ public class CarSetup {
             car = new SUV();
         }
 
-        if (currentTime.getHour() >= 20 || currentTime.getHour() <= 6) {
+        if (currentTime.getHour() >= 20 || currentTime.getHour() < 6) {
             car.setHeadlights(true);
         }
 
