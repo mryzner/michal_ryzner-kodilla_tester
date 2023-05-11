@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CandyApplicationTest {
     private List<String> expectedCandies;
     @BeforeEach
-    private void setup() {
+    public void setup() {
         expectedCandies = new ArrayList<>();
     }
     @Test
