@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class KodillaStorePom extends AbstractPOM {
     @FindBy(css = "input[name=search]")
     WebElement searchField;
@@ -17,10 +19,7 @@ public class KodillaStorePom extends AbstractPOM {
     }
     public int searchItem(String productName) {
         searchField.sendKeys(productName);
-        searchField.submit();
-        WebElement item = driver.findElement(By.cssSelector("div[class=element]"));
-        /*List<WebElement> elements = driver.findElements(By.cssSelector("div[class=element]"));
-        return elements.size();*/
-        return 0;
+        List<WebElement> elements = driver.findElements(By.cssSelector("div[class=element]"));
+        return elements.size();
     }
 }
