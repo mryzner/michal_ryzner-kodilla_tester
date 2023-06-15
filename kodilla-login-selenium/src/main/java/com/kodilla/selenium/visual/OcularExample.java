@@ -22,6 +22,7 @@ public class OcularExample {
 
         WorldTimePage page = new WorldTimePage(webDriver);
         page.open();
+        page.closeAd();
         page.compare();
         page.close();
     }

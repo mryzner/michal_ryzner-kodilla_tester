@@ -3,8 +3,13 @@ package com.kodilla.selenium.visual;
 import com.testautomationguru.ocular.Ocular;
 import com.testautomationguru.ocular.snapshot.Snap;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
 @Snap("WorldTime.png")
 public class WorldTimePage {
+    @FindBy(css = "div>[format=\"primary\"]")
+    WebElement closeAdButton;
     private static final String pageUrl = "https://www.worldtimeserver.com/current_time_in_AW.aspx";
 
     private WebDriver webDriver;
@@ -25,5 +30,8 @@ public class WorldTimePage {
                 .from(this)
                 .sample().using(webDriver)
                 .compare();
+    }
+    public void closeAd(){
+        closeAdButton.click();
     }
 }
