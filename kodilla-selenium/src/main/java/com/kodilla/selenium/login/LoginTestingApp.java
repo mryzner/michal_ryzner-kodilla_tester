@@ -17,7 +17,7 @@ public class LoginTestingApp {
         WebElement emailField = driver.findElement(By.xpath("//html/body/div[1]/div/form/fieldset[1]/input"));
         emailField.sendKeys("test@kodilla.com");
         WebElement passwordField = driver.findElement(By.xpath("//html/body/div[1]/div/form/fieldset[2]/input"));
-        passwordField.sendKeys("kodilla123");
+        passwordField.sendKeys("kodilla12345");
         WebElement loginField = driver.findElement(By.xpath("//html/body/div[1]/div/form/div[2]/button"));
         loginField.submit();
     }
