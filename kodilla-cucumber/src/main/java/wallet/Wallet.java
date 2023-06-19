@@ -1,7 +1,7 @@
 package wallet;
 
 public class Wallet {
-    private int balance = 0;
+    private int balance;
 
     public Wallet() {
     }
@@ -12,5 +12,9 @@ public class Wallet {
 
     public int getBalance() {
         return balance;
+    }
+
+    public void debit(int money) {
+        this.balance -= money;
     }
 }
