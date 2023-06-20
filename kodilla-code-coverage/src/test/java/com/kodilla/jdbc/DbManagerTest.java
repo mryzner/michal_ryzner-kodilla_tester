@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class DbManagerTestSuite {
+class DbManagerTest {
     private static DbManager dbManager;
 
     @BeforeAll
