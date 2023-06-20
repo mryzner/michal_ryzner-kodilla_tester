@@ -10,6 +10,8 @@ import java.sql.Statement;
 import java.util.AbstractMap;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class DbManagerTestSuite {
     private static DbManager dbManager;
 
@@ -20,9 +22,7 @@ class DbManagerTestSuite {
 
     @Test
     void testConnect() {
-        //Given
-        //When
-        //Then
+
         Assertions.assertNotNull(dbManager.getConnection());
     }
 
@@ -43,8 +43,46 @@ class DbManagerTestSuite {
         //Then
         int counter = getResultsCount(rs);
         int expected = count + 5;
-        Assertions.assertEquals(expected, counter);
+        assertEquals(expected, counter);
 
+        rs.close();
+        statement.close();
+    }
+
+    @Test
+    void testSelectUsersAndPosts() throws SQLException {
+
+        String countQuery = "select u.firstname, u.lastname, count(*) as post_number\n" +
+                "from users u\n" +
+                "join posts p on u.id = p.user_id\n" +
+                "group by p.user_id\n" +
+                "having count(*) >= 2;";
+
+        Statement statement = createStatement();
+        ResultSet rs = statement.executeQuery(countQuery);
+        int count = 0;
+        while(rs.next()) {
+            count++;
+        }
+
+        String sqlQuery = "select u.firstname, u.lastname, count(*) as post_number\n" +
+                "from users u\n" +
+                "join posts p on u.id = p.user_id\n" +
+                "group by p.user_id\n" +
+                "having count(*) >= 2;";
+        statement = createStatement();
+        rs = statement.executeQuery(sqlQuery);
+
+        int expected = count;
+        int checkCountAgain = 0;
+        while(rs.next()) {
+            System.out.println(rs.getString("firstname")
+                    + " " + rs.getString("lastname"));
+            checkCountAgain++;
+        }
+
+        assertEquals(expected, checkCountAgain);
+        assertEquals(1, checkCountAgain);
         rs.close();
         statement.close();
     }
