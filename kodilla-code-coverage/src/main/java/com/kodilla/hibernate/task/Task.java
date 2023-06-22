@@ -1,5 +1,7 @@
 package com.kodilla.hibernate.task;
 
+import com.kodilla.hibernate.tasklist.TaskList;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
@@ -12,6 +14,7 @@ public class Task {
     private String description;
     private LocalDate created;
     private int duration;
+    private TaskList taskList;
 
     public Task() {
     }
@@ -44,6 +47,16 @@ public class Task {
     @Column(name = "DURATION")
     public int getDuration() {
         return duration;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "TASKLIST_ID")
+    public TaskList getTaskList() {
+        return taskList;
+    }
+
+    public void setTaskList(TaskList taskList) {
+        this.taskList = taskList;
     }
 
     private void setId(int id) {
