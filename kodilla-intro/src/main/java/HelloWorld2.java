@@ -3,6 +3,10 @@ public class HelloWorld2 {
         printHello();
     }
     public static void printHello() {
+
         System.out.println("Hello");
+    }
+    public static void printEnd() {
+        System.out.println("End");
     }
 }
