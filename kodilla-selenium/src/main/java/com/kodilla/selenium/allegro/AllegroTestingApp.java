@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AllegroTestingApp {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Files\\selenium-drivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.pl/");
 
