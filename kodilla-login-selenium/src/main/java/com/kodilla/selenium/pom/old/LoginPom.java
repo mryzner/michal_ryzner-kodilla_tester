@@ -20,7 +20,7 @@ public class LoginPom {
     WebDriver driver;
 
     public LoginPom() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Files\\selenium-drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\MR\\IdeaProjects\\kodilla-course\\kodilla-login-selenium\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(chromeOptions);

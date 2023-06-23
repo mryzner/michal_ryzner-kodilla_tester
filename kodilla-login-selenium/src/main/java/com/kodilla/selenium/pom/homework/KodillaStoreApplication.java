@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class KodillaStoreApplication {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "kodilla-login-selenium/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\MR\\IdeaProjects\\kodilla-course\\kodilla-login-selenium\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         WebDriver driver = new ChromeDriver(chromeOptions);
