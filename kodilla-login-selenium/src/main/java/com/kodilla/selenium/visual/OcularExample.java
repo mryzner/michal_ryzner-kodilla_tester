@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 
 public class OcularExample {
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "c:\\selenium-drivers\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Files\\selenium-drivers\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         WebDriver webDriver = new ChromeDriver(chromeOptions);
