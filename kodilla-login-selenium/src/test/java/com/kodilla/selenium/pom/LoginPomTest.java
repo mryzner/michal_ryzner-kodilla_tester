@@ -1,14 +1,12 @@
-package com.kodilla.selenium.pom;
+package com.kodilla.selenium.pom.old;
 
-import com.kodilla.selenium.pom.old.LoginPom;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class LoginPomTest {
+class LoginPomTest {
     LoginPom loginPom;
 
     @BeforeEach
